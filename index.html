@@ -115,7 +115,7 @@ Select a type and game
 <img id="thumbnail" class="hidden" alt="Game thumbnail">
 
 <p id="info">
-Click the link above to open the selected game.<br>
+Click the link above or click the game thumbnail to open the selected game in another tab.<br>
 Credits: <link><a href="https://example.com" class="credit-link">@daniel-torres on Github</a>
 </link>
 <script>
@@ -305,7 +305,11 @@ if (!t || !g) {
 
     thumbnail.classList.add("hidden");
     thumbnailLabel.classList.add("hidden");
-
+    thumbnail.addEventListener("click", () => {
+    if (link.href) {
+        window.open(link.href, "_blank");
+    }
+});
     return;
 }
 
